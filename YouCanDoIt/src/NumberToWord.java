@@ -1,6 +1,7 @@
 public class NumberToWord {
 	public static String numToWord(long x) throws Exception {
 		if (x < 100) {
+
 			int t = (int) x;
 			switch (t) {
 			case 0:

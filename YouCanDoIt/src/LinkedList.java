@@ -12,11 +12,12 @@ public class LinkedList {
 	}
 
 	void print() {
-		System.out.println(data);
+		System.out.print(data + " ");
 	}
 
 	void printFromCurrent() {
 		LinkedList t = this;
+		System.out.println();
 		while (t != null) {
 			t.print();
 			t = t.next;
@@ -56,26 +57,48 @@ public class LinkedList {
 		return prev;
 	}
 
+	LinkedList delete(int val) {
+		LinkedList current = this;
+		while (current.data == val) {
+			current.next = current.next.next;
+			System.out.println("skipping head");
+		}
+		if (current == null)
+			return null;
+		while (current.next != null) {
+			if (current.next.data == val) {
+				current.next = current.next.next;
+			} else {
+				current = current.next;
+			}
+
+		}
+
+		return this;
+	}
+
 	void changeMe(int f, LinkedList node) {
 		node.data = f;
 	}
 
 	public static void main(String[] args) {
 		LinkedList head = new LinkedList(1);
+		head.insert(head, 5);
 		head.insert(head, 2);
 		head.insert(head, 3);
 		head.insert(head, 4);
 		head.insert(head, 5);
+		head.insert(head, 5);
 		head.insert(head, 6);
-		// head.printFromCurrent();
-		head = head.reverse();
-		// head.print();
+		head.insert(head, 5);
 		head.printFromCurrent();
 
-		LinkedList node = new LinkedList(100);
-		node.print();
-		node.changeMe(34, node);
-		node.print();
+		head = head.delete(5);
+		head.printFromCurrent();
+		// head.printFromCurrent();
+		// head = head.reverse();
+		// head.print();
+		// head.printFromCurrent();
 
 	}
 
