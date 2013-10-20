@@ -1,5 +1,4 @@
 import java.io.File;
-import java.io.*;
 
 public class FileInputStream {
 
@@ -8,7 +7,7 @@ public class FileInputStream {
 		String path = "/Users/Awesome/Desktop/screenshot";
 		File f = new File(path);
 		FileInputStream fis = new FileInputStream(f);
-		fis.
+
 		;
 	}
 }

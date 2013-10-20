@@ -18,7 +18,7 @@ public class MaximumContiguousValue {
 			maxsofar = maxsofar + x;
 			if (maxsofar < 0)
 				maxsofar = 0;
-			if (maxsofar > max)
+			else if (maxsofar > max)
 				max = maxsofar;
 		}
 		System.out.println(max);

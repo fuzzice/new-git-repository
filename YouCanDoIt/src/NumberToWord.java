@@ -83,7 +83,10 @@ public class NumberToWord {
 	}
 
 	public static void main(String[] args) throws Exception {
-		long x = 1999l;
+		long x = 91;
+		for (int i = 0; i < 1000; i++) {
+			System.out.println(i + ": " + numToWord(i));
+		}
 		System.out.println("Num to Words: " + numToWord(x));
 	}
 

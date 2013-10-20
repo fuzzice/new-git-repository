@@ -1,7 +1,7 @@
 public class AllPossiblePermutations {
 
 	public static void main(String args[]) {
-		permutation("123");
+		permutation("1234");
 		String str = "Sahil";
 		System.out.println(str.substring(0, 1));
 

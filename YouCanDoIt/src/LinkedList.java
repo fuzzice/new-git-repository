@@ -57,6 +57,20 @@ public class LinkedList {
 		return prev;
 	}
 
+	// wrong!! SAHIL, how could you write the following code?
+	LinkedList reverse2() {
+		LinkedList current = this;
+		LinkedList prev = null, next = current.next;
+		while (current != null) {
+			current.next = prev;
+			prev = current;
+			current = next;
+			next = next.next;
+
+		}
+		return current;
+	}
+
 	LinkedList delete(int val) {
 		LinkedList current = this;
 		while (current.data == val) {
@@ -93,13 +107,34 @@ public class LinkedList {
 		head.insert(head, 5);
 		head.printFromCurrent();
 
-		head = head.delete(5);
-		head.printFromCurrent();
+		// head = head.delete(5);
+		// head.printFromCurrent();
 		// head.printFromCurrent();
 		// head = head.reverse();
 		// head.print();
 		// head.printFromCurrent();
 
+		// head = reversePairs(head);
+		// head.printFromCurrent();
+
+	}
+
+	private static LinkedList reversePairs(LinkedList current) {
+		LinkedList ret = null;
+		if (current != null && current.next != null) {
+			ret = current.next;
+		}
+		System.out.println();
+		LinkedList second = current.next;
+		while (current != null && current.next != null) {
+			LinkedList t = current.next;
+			LinkedList t2 = t.next;
+			t.next = current;
+			current.next = t2;
+			current = current.next;
+			current.print();
+		}
+		return ret;
 	}
 
 }

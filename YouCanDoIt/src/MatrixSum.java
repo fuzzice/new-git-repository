@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MatrixSum {
 	private static final int size = 10;
 
@@ -52,10 +55,16 @@ public class MatrixSum {
 
 	public static void main(String[] args) {
 		MatrixSum m = new MatrixSum();
-		m.populate();
-		m.print();
-		m.sumUp();
-		;
-		m.print();
+		// m.populate();
+		// m.print();
+		// m.sumUp();
+		// ;
+		// m.print();
+		System.out.println("Hello");
+		List<Integer> l = new ArrayList<Integer>();
+		l.add(new Integer(2));
+		l.add(new Integer(5));
+		System.out.println("TATATATA" + l.toString());
+
 	}
 }
