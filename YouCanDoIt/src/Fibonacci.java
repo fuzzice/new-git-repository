@@ -22,13 +22,15 @@ public class Fibonacci {
 		dp[0] = dp[1] = 1;
 		if (dp[i] != -1)
 			return dp[i];
-		return fibonacciDp(i - 1) + fibonacciDp(i - 2);
+		dp[i] = fibonacciDp(i - 1) + fibonacciDp(i - 2);
+		return dp[i];
 
 	}
 
 	public static int fibonacciDp2(int i) {
 		dp2[0] = dp2[1] = 1;
-
+		if (dp2[i] != -1)
+			return dp[i];
 		for (int j = 2; j <= i; j++) {
 			dp2[j] = dp2[j - 1] + dp2[j - 2];
 		}
@@ -39,7 +41,7 @@ public class Fibonacci {
 		init();
 		System.out.println(fibonacciNaive(10));
 		System.out.println(fibonacciDp(10));
-		System.out.println(fibonacciDp2(10));
+		System.out.println(fibonacciDp2(7));
 	}
 
 }

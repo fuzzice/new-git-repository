@@ -1,15 +1,14 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MaximumContiguousValue {
 
 	public static void main(String[] args) {
-		ArrayList<Integer> ar = new ArrayList<Integer>();
-		ar.add(-2);
-		ar.add(4);
-		ar.add(-1);
-		ar.add(4);
-		ar.add(-3);
-		ar.add(7);
+		List<Integer> ar = new ArrayList<Integer>();
+		Integer a[] = { 2, 4, 5, -3, -4, -2, 3, -9, 3, 6, 8, -1, 5 };
+		int b[] = { 1, 2, 3 };
+		ar = Arrays.asList(a);
 
 		int max = 0;
 		int maxsofar = 0;

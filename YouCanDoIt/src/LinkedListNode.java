@@ -1,13 +1,13 @@
-public class LinkedList {
+public class LinkedListNode {
 
-	LinkedList next;
+	LinkedListNode next;
 	private int data;
 
-	LinkedList(int d) {
+	LinkedListNode(int d) {
 		data = d;
 	}
 
-	public LinkedList() {
+	public LinkedListNode() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -16,7 +16,7 @@ public class LinkedList {
 	}
 
 	void printFromCurrent() {
-		LinkedList t = this;
+		LinkedListNode t = this;
 		System.out.println();
 		while (t != null) {
 			t.print();
@@ -24,15 +24,15 @@ public class LinkedList {
 		}
 	}
 
-	void insert(LinkedList head, int d) {
-		LinkedList n = new LinkedList();
+	void insert(LinkedListNode head, int d) {
+		LinkedListNode n = new LinkedListNode();
 		n.data = d;
 		if (head == null) {
 			head = n;
 			return;
 		}
 
-		LinkedList t = head;
+		LinkedListNode t = head;
 		while (t.next != null) {
 			t = t.next;
 
@@ -40,13 +40,13 @@ public class LinkedList {
 		t.next = n;
 	}
 
-	LinkedList reverse() {
-		LinkedList head = this;
+	LinkedListNode reverse() {
+		LinkedListNode head = this;
 		if (head == null)
 			return null;
-		LinkedList current = head;
-		LinkedList prev = null;
-		LinkedList next = null;
+		LinkedListNode current = head;
+		LinkedListNode prev = null;
+		LinkedListNode next = null;
 		while (current != null) {
 			next = current.next;
 			current.next = prev;
@@ -58,9 +58,9 @@ public class LinkedList {
 	}
 
 	// wrong!! SAHIL, how could you write the following code?
-	LinkedList reverse2() {
-		LinkedList current = this;
-		LinkedList prev = null, next = current.next;
+	LinkedListNode reverse2() {
+		LinkedListNode current = this;
+		LinkedListNode prev = null, next = current.next;
 		while (current != null) {
 			current.next = prev;
 			prev = current;
@@ -71,8 +71,9 @@ public class LinkedList {
 		return current;
 	}
 
-	LinkedList delete(int val) {
-		LinkedList current = this;
+	LinkedListNode delete(int val) {
+		// delete a node at the head
+		LinkedListNode current = this;
 		while (current.data == val) {
 			current.next = current.next.next;
 			System.out.println("skipping head");
@@ -91,12 +92,12 @@ public class LinkedList {
 		return this;
 	}
 
-	void changeMe(int f, LinkedList node) {
+	void changeMe(int f, LinkedListNode node) {
 		node.data = f;
 	}
 
 	public static void main(String[] args) {
-		LinkedList head = new LinkedList(1);
+		LinkedListNode head = new LinkedListNode(1);
 		head.insert(head, 5);
 		head.insert(head, 2);
 		head.insert(head, 3);
@@ -119,16 +120,16 @@ public class LinkedList {
 
 	}
 
-	private static LinkedList reversePairs(LinkedList current) {
-		LinkedList ret = null;
+	private static LinkedListNode reversePairs(LinkedListNode current) {
+		LinkedListNode ret = null;
 		if (current != null && current.next != null) {
 			ret = current.next;
 		}
 		System.out.println();
-		LinkedList second = current.next;
+		LinkedListNode second = current.next;
 		while (current != null && current.next != null) {
-			LinkedList t = current.next;
-			LinkedList t2 = t.next;
+			LinkedListNode t = current.next;
+			LinkedListNode t2 = t.next;
 			t.next = current;
 			current.next = t2;
 			current = current.next;

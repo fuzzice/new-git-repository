@@ -1,6 +1,4 @@
-import java.io.File;
-
-public class FileInputStream {
+public class FileInputStreamYo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

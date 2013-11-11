@@ -1,9 +1,13 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class AllPossiblePermutations {
 
 	public static void main(String args[]) {
-		permutation("1234");
+		permutation("aaaa");
 		String str = "Sahil";
 		System.out.println(str.substring(0, 1));
+		Set<Character> h = new HashSet<Character>();
 
 	}
 
