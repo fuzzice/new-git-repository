@@ -69,7 +69,7 @@ public class TopCoderSRM479 {
 	String winner(int size0, int size1) {
 		Stack<String> s = new Stack<String>();
 		s.push("Yes");
-		s.push("hello");
+		return s.push("hello");
 
 	}
 }

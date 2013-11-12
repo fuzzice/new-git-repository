@@ -65,6 +65,9 @@ public class CompressString {
 		System.out.println("Compressed string is " + compress(uncompressed));
 		System.out.println("Compressed string is " + compress2(uncompressed));
 
-	}
+		String s = "Sahil,is,a,good,boy";
+		String[] s2 = s.split(",");
+		System.out.println(s2[0] + s2[1] + s2[2]);
 
+	}
 }
