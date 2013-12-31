@@ -4,9 +4,8 @@ import java.util.Set;
 public class AllPossiblePermutations {
 
 	public static void main(String args[]) {
-		permutation("aaaa");
-		String str = "Sahil";
-		System.out.println(str.substring(0, 1));
+		permutation("abcd");
+
 		Set<Character> h = new HashSet<Character>();
 
 	}
