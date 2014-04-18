@@ -1,7 +1,9 @@
+import java.util.List;
+
 public class LinkedListNode {
 
 	LinkedListNode next;
-	private int data;
+	int data;
 
 	LinkedListNode(int d) {
 		data = d;
@@ -137,5 +139,35 @@ public class LinkedListNode {
 		}
 		return ret;
 	}
+
+	public void createLinkedListAsHead(List<Integer> asList) {
+		LinkedListNode h=this;
+		for(int i=0;i<asList.size();i++){
+			if(i==0)
+				h.data=asList.get(i);
+			else{
+				LinkedListNode n=new LinkedListNode(asList.get(i));
+				h.next=n;
+				h=n;
+			}
+		}
+	}
+
+	public LinkedListNode getNext() {
+		return next;
+	}
+
+	public void setNext(LinkedListNode next) {
+		this.next = next;
+	}
+
+	public int getData() {
+		return data;
+	}
+
+	public void setData(int data) {
+		this.data = data;
+	}
+
 
 }
